@@ -25,7 +25,7 @@ handleSubmit = async e => {
       return alert("passwords don't match");
     }
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);      
+      await auth.createUserWithEmailAndPassword(email, password);      
       this.setState({
         displayName: '',
         email: '',
@@ -50,8 +50,7 @@ render() {
                     name="displayName"
                     value={displayName}
                     onChange={this.handleChange}
-                    label="Display Name"
-                    required
+                    label="Display Name"                    
                 />
                 <FormInput 
                     id="email" 
